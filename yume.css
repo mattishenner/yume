@@ -600,7 +600,7 @@ nav .menu-button {
     position: relative;
     text-decoration: none;
     z-index: 2;
-    color: var(--default-black);
+    color: var(--nav-item-color);
     font-weight: 400;
 }
 
