@@ -24,6 +24,7 @@
     /* Nav Bar */
     --nav-height: 5em;
     --nav-color: #ffffff;
+    --nav-item-color: #272727;
 
 
     --drop-shadow: 0px 0px 18px #00000010;
@@ -541,7 +542,7 @@ nav ul li a,
 nav ul li a:visited,
 nav a {
     text-decoration: none;
-    color: var(--default-black);
+    color: var(--nav-item-color);
     font-weight: 400;
     transition: opacity var(--hover-transition);
 }
