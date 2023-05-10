@@ -540,7 +540,7 @@ nav ul li {
 
 nav ul li a,
 nav ul li a:visited,
-nav a {
+nav a, nav a:visited {
     text-decoration: none;
     color: var(--nav-item-color);
     font-weight: 400;
