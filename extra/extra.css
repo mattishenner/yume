@@ -1,0 +1,197 @@
+:root{
+    --accordion-padding: 10px;
+}
+
+.user-resize{
+    resize: horizontal;
+    overflow: auto;
+    background-color: rgb(237, 237, 237);
+    padding: 30px;
+    max-width: 100%;
+    min-width: 300px;
+    /* container-type: inline-size;
+    container-name: resize; */
+}
+
+.user-resize-nav{
+    resize: horizontal;
+    height: 280px;
+    overflow: auto;
+    background-color: rgb(237, 237, 237);
+    max-width: 100%;
+    min-width: 300px;
+    /* container-type: inline-size;
+    container-name: resize; */
+}
+
+
+@container resize (max-width: 600px){
+    .hide-menu {
+        display: block;
+    }
+
+    .demo-nav ul {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        padding: 100px 0 40px;
+        background-color: white;
+        box-shadow: var(--drop-shadow);
+        flex-direction: column;
+        transform: translateY(-200%);
+        margin: 0;
+        z-index: 1;
+        overflow-y: scroll;
+    }
+
+    .demo-nav ul li {
+        padding: 15px 0;
+    }
+
+    .demo-nav .demo-open-menu {
+        transform: translateY(0%);
+    }
+
+    .user-resize-nav{
+        height: 500px;
+    }
+}
+
+pre{
+    background-color: white;
+    box-shadow: 0px 0px 10px #00000006;
+    border: 1px solid rgb(217, 217, 217);
+    border-radius: 10px;
+    padding: 0 20px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+code{
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #e8e8e8;;
+}
+
+
+/* Accordions */
+/* accordions */
+.accordion-header {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.accordion-header h1, .accordion-header h2, .accordion-header h3, .accordion-header h4, .accordion-header h5, .accordion-header h6, .accordion-header p, .accordion-header b{
+    margin: 0 0 3px 0;
+}
+
+.accordion-content {
+    max-height: 0px;
+    overflow: hidden;
+}
+
+.accordion {
+    border-bottom: 1px solid var(--black);
+    padding: var(--accordion-padding) 0;
+    margin: 10px 0;
+}
+
+.accordion.active .accordion-content {
+    max-height: 500px;
+    overflow: scroll;
+}
+.accordion-icon{
+    padding-left: 10px;
+}
+
+
+/* Sidebar */
+/* Sidebar */
+.sidebar{
+    margin: 0;
+    position: fixed;
+    max-width: 15vw;
+}
+.sidebar{
+    list-style: none;
+    padding: 0;
+}
+.sidebar li a, .sidebar li a:visited{
+    text-decoration: none;
+    color: var(--default-black);
+    font-weight: 400;
+}
+ul.sidebar > li > div.accordion {
+    padding: 0;
+}
+.sidebar .accordion{
+    border-bottom: none;
+}
+.sidebar .accordion ul{
+    list-style: none;
+    padding-top: .5em;
+}
+.sidebar .accordion, .sidebar .accordion .accordion-header p, .sidebar .accordion .accordion-header h1, .sidebar .accordion .accordion-header h2, .sidebar .accordion .accordion-header h3, .sidebar .accordion .accordion-header h4, .sidebar .accordion .accordion-header h5, .sidebar .accordion .accordion-header h6{
+    margin: 0;
+}
+aside .sidebar li.active a{
+    font-weight: 700;
+}
+
+
+@media only screen and (min-width: 900px){
+    .sidebar-mobile-icon{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 900px){
+    /* Sidebar */
+    .sidebar{
+        background-color: white;
+        max-width: unset;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        padding-left: 1em;
+        padding-right: 2em;
+        z-index: 1000;
+        box-shadow: var(--drop-shadow);
+        transform: translateX(-220px);
+        width: 220px;
+        transition: transform 300ms;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .sidebar-open{
+        transform: translateX(0);
+    }
+    .sidebar-mobile-icon{
+        display: block;
+        position: fixed;
+        background-color: rgb(29, 29, 29);
+        color: white;
+        border-radius: 0 6px 6px 0;
+        padding: .75em .5em;
+        font-size: 1.25em;
+        opacity: .75;
+        font-weight: 700;
+        box-shadow: var(--drop-shadow);
+        left: 0;
+        top: 45vh;
+        z-index: 1000;
+        transition: transform 300ms;
+    }
+    .sidebar-mobile-icon-open{
+        transform: translateX(200px) rotate(180deg);
+        border-radius: 6px;
+        opacity: 1;
+    }
+}

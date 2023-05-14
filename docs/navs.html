@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navs - Learn Yume</title>
+    <!-- Yume -->
+    <link rel="stylesheet" href="../yume.css">
+    <script src="../yume.js" defer></script>
+
+    <!-- Prism -->
+    <link rel="stylesheet" href="../prism/prism.css">
+    <script src="../prism/prism.js" defer></script>
+
+    <!-- Custom style and script -->
+    <link rel="stylesheet" href="../extra/extra.css">
+    <script src="../extra/extra.js" defer></script>
+</head>
+
+<body>
+    <nav class="container sticky fade-in">
+        <a href="#top" class="logo">Yume<span class="gray-200">CSS</span></a>
+        <ul>
+            <li class="active"><a href="#layout">Learn</a></li>
+            <li><a href="#layout">Showcase</a></li>
+            <li><a href="#">Get Yume</a></li>
+        </ul>
+    </nav>
+
+
+    <main class="container grid">
+        <aside class="col-2 mt-10">
+            <ul class="sidebar">
+                <li><a href="main.html">Overview</a></li>
+                <li class="active"><a href="#">Navs</a></li>
+                <li>
+                    <div class="accordion">
+                        <div class="accordion-header">
+                            <p>Layout</p>
+                            <p class="accordion-icon">+</p>
+                        </div>
+                        <div class="accordion-content">
+                            <ul>
+                                <li><a href="">Grid</a></li>
+                                <li><a href="">Flexbox</a></li>
+                                <li><a href="">Margin and Padding</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="accordion">
+                        <div class="accordion-header">
+                            <p>Styling</p>
+                            <p class="accordion-icon">+</p>
+                        </div>
+                        <div class="accordion-content">
+                            <ul>
+                                <li><a href="">Typography</a></li>
+                                <li><a href="">Colors</a></li>
+                                <li><a href="">Border Radius</a></li>
+                                <li><a href="">Drop Shadow</a></li>
+                                <li><a href="">Forms and Buttons</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#">Animations</a></li>
+                <li><a href="#">Customize</a></li>
+            </ul>
+            <div class="sidebar-mobile-icon">
+                &rarr;
+            </div>
+        </aside>
+        
+        <div class="col-10 blog md-col-12">
+            <h2>The Responsive Navigation System</h2>
+            <p>Yume is designed to help you create beautiful and responsive web designs with ease. The navigation system is designed to create an attractive and functional nav-bar with minimal effort.</p>
+            <h3>Why you'll love Yume's nav system:</h3>
+            <ul>
+                <li><strong>It's responsive out of the box.</strong> It's designed to automatically adjust to different screen sizes, ensuring a great user experience on any device. This means you don't have to worry about writing complex media queries for your navigation bar. Yume takes care of that for you.</li>
+                <li><strong>Nested ul elements become dropdowns.</strong> Any ul inside the main ul will automatically be detected by Yume, and converted into a dropdown menu. More on that later!</li>
+                <li><strong>No need to add an icon</strong> While Yume automatically generates a menu button for you, you also have the option to provide your own custom menu icon. If you'd like to use a custom menu button, simply add a .menu-button class to your desired element within the <code>nav</code> tag.</li>
+                <li><strong>Active link styling</strong> You can easily highlight the currently active link in your navigation bar by adding the .active class to the corresponding list item.</li>
+                <li><strong>Sticky navigation support</strong> If you'd like to make your navigation bar sticky, simply add the .sticky class to your <code>nav</code> element. This will ensure that the navigation bar remains at the top of the viewport as users scroll down your page, improving the overall user experience and accessibility of your website.</li>
+                <li><strong>Subtle hover transitions</strong> Yume's navigation system incorporates a subtle opacity change on hover, giving a smooth visual feedback to users when they interact with the navigation links.</li>
+            </ul>
+            <h4>Get Started</h4>
+            <p>All you need is to place a <code>ul</code> tag inside a <code>nav</code> tag:</p>
+            <pre>
+                <code class="language-html">
+                    <nav class="container">
+                        <ul>
+                            <li>Item 1</li>
+                            <li>Item 2</li>
+                            <li>Item 3</li>
+                        </ul>
+                    </nav>
+                </code>
+            </pre>
+            <p>Here's what it looks like:</p>
+            <div class="flex bg-gray-100 px-4 border-radius-2">
+                <p class="mr-8">Item 1</p>
+                <p class="mr-8">Item 2</p>
+                <p>Item 3</p>
+            </div>
+            <p>And on mobile (when menu is opened):</p>
+            <div class="grid border-radius-2 bg-gray-100 p-4 width-60">
+                <div class="col-12 flex align-end">Close</div>
+                <div class="flex column align-center col-12">
+                    <p>Item 1</p>
+                    <p>Item 2</p>
+                    <p>Item 3</p>
+                </div>
+            </div>
+            <!-- Logo -->
+            <h4>Items will automatically distribute</h4>
+            <p>Let's add a logo:</p>
+            <pre>
+                <code class="language-html">
+                    <nav class="container">
+                        <a href="" class="logo">LOGO</a>
+                        <ul>
+                            <li>Item 1</li>
+                            <li>Item 2</li>
+                            <li>Item 3</li>
+                        </ul>
+                    </nav>
+                </code>
+            </pre>
+            <div class="flex align-center justify-space-between bg-gray-100 px-4 border-radius-2">
+                <a href="" class="logo">LOGO</a>
+                <div class="flex">
+                    <p class="mr-8">Item 1</p>
+                    <p class="mr-8">Item 2</p>
+                    <p>Item 3</p>
+                </div>
+            </div>
+            <!-- Dropdowns -->
+            <h4>Dropdowns</h4>
+            <p>To create dropdown menu items, simply nest another <code>ul</code> element inside of the nav ul:</p>
+            <pre>
+                <code class="language-html">
+                    <nav class="container">
+                        <a href="" class="logo">LOGO</a>
+                        <ul>
+                            <li>
+                                Dropdown
+                                <ul>
+                                    <li>Item 1</li>
+                                    <li>Item 2</li>
+                                    <li>Item 3</li>
+                                </ul>
+                            </li>
+                            <li>Item 2</li>
+                            <li>Item 3</li>
+                        </ul>
+                    </nav>
+                </code>
+            </pre>
+            <div class="flex align-center justify-space-between bg-gray-100 px-4 border-radius-2">
+                <a href="" class="logo">LOGO</a>
+                <div class="flex">
+                    <p class="mr-8">Item 1</p>
+                    <p class="mr-8">Item 2</p>
+                    <p>Item 3</p>
+                </div>
+            </div>
+            <p>Yume will automatically convert this to a dropdown which will open on hover on desktop, and on touch on mobile.</p>
+        </div>
+    </main>
+</body>
+
+</html>
